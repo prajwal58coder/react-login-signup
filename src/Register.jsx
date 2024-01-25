@@ -2,6 +2,7 @@ import React, {useState} from "react";
 export const Register = (props) => {
     const [email, setEmail] = useState('');
     const[pass, setPass] = useState('');
+    const[confirmpass, setconfirmPass] = useState('');
     const [name, setName] = useState('');
 
     const handleSubmit = (e) => {
@@ -21,7 +22,7 @@ export const Register = (props) => {
                 <label for = "password">Password</label>
                 <input value={pass} onChange={(e) => setPass(e.target.value)} type = "password" placeholder="Enter your password" id= "password" name ="password" />
                 <label for = "Confirm Password">Confirm Password</label>
-                <input value={pass} onChange={(e) => setPass(e.target.value)} type = "password" placeholder="Confirm your password" id= "password" name ="password" />
+                <input value={confirmpass} onChange={(e) => setconfirmPass(e.target.value)} type = "password" placeholder="Confirm your password" id= "password" name ="password" />
                 <button type="submit">Sign Up</button>
             </form>
             <button onClick={() =>props.onFormSwitch('login')}> Already have an account? Login Here. </button>
