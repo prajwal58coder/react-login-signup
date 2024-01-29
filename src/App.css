@@ -9,23 +9,23 @@
 }
 
 .auth-form-container,
-.login-form,
+.login-form
 .register-form {
   display: flex;
   flex-direction: column;
-  background-color: #7439db;
+  background-color: #ffffff;
 
 }
 
 @media screen and (min-width: 900px) {
   .auth-form-container {
-    padding: 5rem;
-    border: 1px solid rgb(255, 248, 248);
+    padding: 4rem; /* Adjust padding as needed */
+    border: 1px solid rgb(255, 255, 255);
     border-radius: 10px;
     margin: 0.5rem;
-    height: 600px;
-    margin-top: 100px;
-    width: 700px;
+    height: 450px; /* Adjust height as needed */
+    margin-top: 40px; /* Adjust margin-top as needed */
+    width: 650px; /* Adjust width as needed */
   }
 }
 
@@ -37,7 +37,7 @@ label {
 input {
   margin-top: 20px;
   padding: 15px;
-  border: none;
+  border: 2px solid rgba(0, 0, 0, 0.2);
   color: rgb(0, 0, 0);
   border-radius: 10px;
   display: block;
@@ -56,6 +56,10 @@ button {
   border-radius: 5px;
   cursor: pointer;
   color: #ffffff; 
+  width: 40%;
+  height: 40px;
+  /* margin-bottom: 100px; */
+  margin-top: 35px;
 }
 
 
@@ -73,14 +77,60 @@ h2{
 .signup-textfield {
   display: inline-block;
   padding: 10px; /* Adjust the padding as needed */
-  border: 1px solid blue; /* Set the border color to blue */
+  border: none; /* Set the border color to blue */
   border-radius: 5px; /* Adjust the border-radius for a smaller curve */
   cursor: pointer;
-  color: blue; /* Set text color to blue */
+  color: rgb(2, 2, 2); /* Set text color to blue */
   user-select: none; /* Disable text selection */
   transition: background-color 0.3s; /* Add a smooth transition for background color */
+  font-size: 12px;
+  margin-left: 20px; /* Adjust the margin-left property for horizontal alignment */
 }
 
 .signup-textfield:hover {
   background-color: #f0f0f0; /* Change background color on hover if desired */
+}
+body {
+  background-color: #f8e8a9; 
+  margin: 0; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.forgetpassword-textfield {
+  display: inline-block;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgb(2, 2, 2);
+  user-select: none;
+  transition: background-color 0.3s, color 0.3s; /* Add transitions for background color and text color */
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+.forgetpassword-textfield:hover {
+  background-color: #f0f0f0;
+  color: #000; /* Change text color on hover */
+}
+.otpverification-textfield {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  border: none;
+  border-radius: 25px; /* Half of the height for an oval shape */
+  background-color: blue; /* Adjust the background color */
+  color: #fff; /* Adjust the text color */
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: px; /* Adjust the margin-top as needed */
+  margin-left: 200px;
+}
+
+.otpverification-textfield:hover {
+  background-color: #0070cc; /* Change background color on hover if desired */
 }

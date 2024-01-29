@@ -1,3 +1,4 @@
+
 import React, {useState} from "react";
 
 export const Login = (props) => {
@@ -25,9 +26,16 @@ export const Login = (props) => {
   className="signup-textfield"
   onClick={() => props.onFormSwitch('register')}
 >
-  Sign Up
+  Don't have an account? Sign Up
 </div>
+<div
+  className="forgetpassword-textfield"
+  onClick={() => props.onFormSwitch('forgetpassword')}
+>
+Forget Password
+</div>
+
 
         </div>
     )
-}
+}       

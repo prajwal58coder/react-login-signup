@@ -3,28 +3,43 @@ import logo from './logo.svg';
 import './App.css';
 import { Login } from "./Login";
 import { Register } from "./Register";
-
-
-
-
+import { ForgetPassword } from './ForgetPassword';
+import { OTPVerification } from './OTPVerification';
+import { NewPassword } from './NewPassword';
 function App() {
   const [currentForm, setCurrentForm] = useState('login');
+  const [emailForReset, setEmailForReset] = useState('');
 
-  const toggleForm = (formName) =>{
-    setCurrentForm(formName);
-  }
+  
+    
+    const handleFormSwitch = (formName, email = '') => {
+      setCurrentForm(formName);
+      setEmailForReset(email);
+  };
 
+  const handleOtpVerified = () => {
+    setCurrentForm('newpassword');
+  };
+  
+      
   return (
     <div className="App">
-      
-      {
-        currentForm== "login"  ? <Login onFormSwitch = {toggleForm} /> : <Register onFormSwitch = {toggleForm} />
-      }
-      
-      
+      {currentForm === 'login' && <Login onFormSwitch={handleFormSwitch} />}
+      {currentForm === 'register' && (
+        <Register onFormSwitch={handleFormSwitch} />
+      )}
+      {currentForm === "forgetpassword" && (
+        <ForgetPassword onFormSwitch={handleFormSwitch} />
+      )}
+      {currentForm === "otpverification" && (
+        <OTPVerification onFormSwitch={handleFormSwitch} onOtpVerified={handleOtpVerified} email={emailForReset} />
+      )}
+      {currentForm === "newpassword" && (
+        <NewPassword onFormSwitch={handleFormSwitch} />
+      )}
     </div>
+
   );
 }
 
 export default App;
-

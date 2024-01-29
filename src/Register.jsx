@@ -12,20 +12,25 @@ export const Register = (props) => {
 
     return(
         < div className="auth-form-container">
-            <h2>Register</h2>
+            <h2>Portfolio Tracker</h2>
 
             <form onSubmit={handleSubmit}>
-                <label htmlFor="name">User Name</label>
+                <label htmlFor="name"></label>
                 <input value={name} name="name" onChange={(e) => setName(e.target.value)} id="name" placeholder="Enter your user name" />
-                <label htmlFor = "email">Email</label>
+                <label htmlFor = "email"></label>
                 <input value= {email} onChange={(e) => setEmail(e.target.value)} type = "email" placeholder="Enter your email" id= "email" name ="email" />
-                <label for = "password">Password</label>
+                <label for = "password"></label>
                 <input value={pass} onChange={(e) => setPass(e.target.value)} type = "password" placeholder="Enter your password" id= "password" name ="password" />
-                <label for = "Confirm Password">Confirm Password</label>
+                <label for = "Confirm Password"></label>
                 <input value={confirmpass} onChange={(e) => setconfirmPass(e.target.value)} type = "password" placeholder="Confirm your password" id= "password" name ="password" />
                 <button type="submit">Sign Up</button>
             </form>
-            <button onClick={() =>props.onFormSwitch('login')}> Already have an account? Login Here. </button>
+            <div
+  className="signup-textfield"
+  onClick={() => props.onFormSwitch('login')}
+>
+  Already have an account? Login
+</div>
         </div>
         )
     }
