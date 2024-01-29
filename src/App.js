@@ -6,6 +6,7 @@ import { Register } from "./Register";
 import { ForgetPassword } from './ForgetPassword';
 import { OTPVerification } from './OTPVerification';
 import { NewPassword } from './NewPassword';
+import { OTPVerificationFailed } from './OTPVerficationFailed';
 function App() {
   const [currentForm, setCurrentForm] = useState('login');
   const [emailForReset, setEmailForReset] = useState('');
@@ -17,8 +18,12 @@ function App() {
       setEmailForReset(email);
   };
 
-  const handleOtpVerified = () => {
-    setCurrentForm('newpassword');
+  const handleOtpVerified = (isVerified) => {
+    if (isVerified) {
+      setCurrentForm('newpassword');
+    } else {
+      setCurrentForm('otpverificationfailed');
+    }
   };
   
       
@@ -36,6 +41,9 @@ function App() {
       )}
       {currentForm === "newpassword" && (
         <NewPassword onFormSwitch={handleFormSwitch} />
+      )}
+      {currentForm === 'otpverificationfailed' && (
+        <OTPVerificationFailed onFormSwitch={handleFormSwitch} />
       )}
     </div>
 
