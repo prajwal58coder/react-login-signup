@@ -7,11 +7,13 @@ import { ForgetPassword } from './ForgetPassword';
 import { OTPVerification } from './OTPVerification';
 import { NewPassword } from './NewPassword';
 import { OTPVerificationFailed } from './OTPVerficationFailed';
+
+
 function App() {
   const [currentForm, setCurrentForm] = useState('login');
   const [emailForReset, setEmailForReset] = useState('');
 
-  
+    
     
     const handleFormSwitch = (formName, email = '') => {
       setCurrentForm(formName);
